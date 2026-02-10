@@ -2,9 +2,9 @@ name: PCR Telegram Monitor
 
 on:
   schedule:
-    # This runs every 15 minutes (GitHub's minimum reliable interval)
-    - cron: '*/15 * * * *'
-  workflow_dispatch: # Allows you to run it manually for testing
+    # Runs every 15 minutes (GitHub's minimum reliable interval)
+    - cron: '*/5 * * * *'
+  workflow_dispatch: # Allows you to manually click "Run workflow" for testing
 
 jobs:
   build:
@@ -24,8 +24,8 @@ jobs:
           pip install requests
 
       - name: Run PCR Script
+        # THIS IS THE PART THAT WAS MISSING
         env:
-          # Securely pass your tokens using GitHub Secrets
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: python PCR_scrap.py
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN}}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python pcr_monitor.py
