@@ -28,4 +28,4 @@ jobs:
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN}}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python PCR_scrap
+        run: python pcr_monitor.py
