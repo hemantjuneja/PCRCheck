@@ -6,7 +6,7 @@ import sys
 # These are set in GitHub Secrets
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
-THRESHOLD_PCR = 1.2  # Change this to your preferred alert level
+THRESHOLD_PCR = 1  # Change this to your preferred alert level
 
 def send_telegram(message):
     """Sends a notification to your Telegram Bot."""
