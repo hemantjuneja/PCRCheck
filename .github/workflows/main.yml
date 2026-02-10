@@ -28,4 +28,4 @@ jobs:
           # Securely pass your tokens using GitHub Secrets
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: python your_script_name.py
+        run: python PCR_scrap.py
