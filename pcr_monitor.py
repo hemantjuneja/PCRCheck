@@ -66,11 +66,11 @@ def main():
             alert_msg = (
                 f"🚨 *PCR ALERT: {pcr_value}*\n"
                 f"🕒 Time: {timestamp}\n"
-                f"📈 Status: Threshold ({THRESHOLD_PCR}) reached."
+                f"📈 Status: Threshold reached."
             )
             send_telegram(alert_msg)
         else:
-            print(f"PCR is {pcr_value}, which is below threshold {THRESHOLD_PCR}. No alert sent.")
+            print(f"PCR is {pcr_value}, which is below threshold. No alert sent.")
     else:
         print("Could not retrieve PCR data. API might be down or structure changed.")
     
