@@ -7,7 +7,7 @@ import sys
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 MAX_PCR = 1.39  # Change this to your preferred alert level
-LOW_PCR = 0.6
+LOW_PCR = 0.7
 
 def send_telegram(message):
     """Sends a notification to your Telegram Bot."""
