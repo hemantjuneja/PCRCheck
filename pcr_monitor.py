@@ -6,8 +6,8 @@ import sys
 # These are set in GitHub Secrets
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
-MAX_PCR = 1  # Change this to your preferred alert level
-LOW_PCR = 1
+MAX_PCR = 1.39  # Change this to your preferred alert level
+LOW_PCR = 0.6
 
 def send_telegram(message):
     """Sends a notification to your Telegram Bot."""
@@ -62,7 +62,7 @@ def main():
     if pcr_value is not None:
         print(f"Latest PCR: {pcr_value} at {timestamp}")
         
-        if pcr_value > MAX_PCR and pcr_value < LOW_PCR:
+        if pcr_value > MAX_PCR or pcr_value < LOW_PCR:
             alert_msg = (
                 f"🚨 *PCR ALERT: {pcr_value}*\n"
                 f"🕒 Time: {timestamp}\n"
